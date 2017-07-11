@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<!--<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+		<script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" ></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>-->
+		<script src="js/iSlider.js"></script>
+		<script src="js/resize.js"></script>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="iSlider-wrapper"></div><i class="next fa fa-chevron-up" id='nextPage'></i><!--<div class="music"><audio src="img/张靓颖 - Dream It Possible.mp3" autoplay="autoplay" loop="loop" ></audio></div>-->
+		<!--音乐播放-->
+		<div id="audio_btn" class="video_exist play_yinfu" style="display: block;">  
+			<div id="yinfu" class="rotate"></div>   
+			<audio id="myMusic" src="img/basic/张靓颖 - Dream It Possible.mp3" loop="loop" style="display:none;" preload="auto"></audio>
+		</div>
+		<!--背景-->
+		
+		<script>
+			 var templatePhoto1 = '<div class="imgs-wrap " >'
+			 					+ '<div class="tepm-img">'
+			  					+ '<img src="img/source/page2/1043.jpg"/>'
+			  					+ '</div>'
+			  					+ '<div class="tepm-img">'
+			  					+ '<img src="img/source/page2/1043.jpg"/>'
+			  					+ '</div>'
+			  					+ '<div class="tepm-img">'
+			  					+ '<img src="img/source/page2/1043.jpg"/>'
+			  					+ '</div>'
+			  					+ '<div class="tepm-img">'
+			  					+ '<img src="img/source/page2/1043.jpg"/>'
+			  					+ '</div>'
+			  					+'</div>'
+			  var page1 =  '<img class="page1Bg" src="img/source/1.png" /><div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>';
+			  var page2 = '<div class="page2Bg">'
+			  			+ '<div class="bottom"></div>'
+			  			+ '<div class="p2-title1" >'
+        				+ '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png"></div>'
+						+ templatePhoto1
+						+ '<div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>'
+						+ '</div>'
+			  var page3 = '<div id="page3" class="page3">'
+			  			+ '<div class="tepm-img"><img src="img/source/123.jpg"/></div>'
+			  			+ '<div class="tepm-img"><img src="img/source/1234.jpg"/></div>'
+			  			+ '<div class="tepm-img"><img src="img/source/12345.jpg"/></div>'
+			  			+ '</div>'
+			  var page4 = '<img class="page1Bg" src="img/source/1.png" /><div id="page4">'
+			            + '<div class="titles"><div class="p4-title1" >'
+			            + '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png">'
+						+ '</div><div id="p4-title2" class="p4-title2"></div></div>'
+						+ '<div class="bottom">fff</div>'
+						+ '</div>'
+			  var list = [
+		        /*// picture
+		        {
+		            content: 'img/source/loading_200x_200.gif'
+		        },*/
+		        // HTML String
+		        {
+		            content: page1
+		        },
+		        // element
+		        {
+		            content: page2
+		        },
+		        {
+		            content: page3
+		        },
+		        {
+		            content: page4
+		        },
+		        // fragment
+		       /* {
+		            content: (function () {
+		                var frag = document.createDocumentFragment();
+		                var img = new Image()
+		                var dom = document.createElement('div');
+		                dom.innerHTML = 'Fragment';
+		                dom.style.cssText = 'font-size:3em;color:rgb(230, 63, 230);';
+		                frag.appendChild(dom);
+		                return frag;
+		            })()
+		        },*/
+		        /*// dom
+		        {
+		            content: document.querySelector('#hidden-space > p')
+		        },*/
+		        // iframe
+		        /*{
+		            content: '' +
+		            '<div style="padding-top:.2em;font-size:3em;color:rgb(230, 63, 230);position:absolute;top:0;left:0;height:100%;width:100%;z-index:1">' +
+		            '<span style="padding:.2em;background-color:black;">Iframe</span>' +
+		            '</div>'+'<iframe></iframe>'
+		            
+		        }*/
+		    ];
+		
+		    var S = new iSlider({
+		        dom: document.getElementById('iSlider-wrapper'),
+		        data: list,
+		        isAutoplay: 0,
+		        isLooping: 1,
+		        isOverspread: 1,
+		        animateTime: 800,
+		        isVertical: true,
+		        oninitialized:function(){
+		        	var _this = this;
+		        	var next = document.getElementById('nextPage');
+					    next.addEventListener('touchend',function(){
+					    	_this.slideNext()
+					    })//下一页
+		        }
+		    });
+		   
+		   
+		  /* page4  时分秒显示*/
+		 	 //时间
+		  setInterval(function(){
+		        var th_moment = new Date(2016,1,13,23,0);//获取当初时间
+		        var now = new Date();//获取当前时间
+		        var time = (now-th_moment)/1000;   //当前时间-当初时间
+		        var day = Math.floor(time/(24*60*60));//天数
+		        var hour = Math.floor(time%(24*60*60)/(60*60));//小时
+		        var min = Math.floor(time%(24*60*60)%(60*60)/60);//分钟
+		        var second = Math.floor(time%(24*60*60)%(60*60)%60);//秒钟
+		        hour = hour < 10 ? "0" + hour.toString():hour;//数字小于10时在前方加“0”
+		        min = min < 10 ? "0" + min.toString():min;
+		        second = second < 10 ? "0" + second.toString():second;
+		        var result = "<p class='days-count'>已携手 <span>"+day+"</span>天<span>"+hour+"</span>小时<span>"+min+"</span>分<span>"+second+"</span>秒";//时间显示
+		        
+		       
+		       if(document.getElementById("p4-title2"))
+		       {
+		       		document.getElementById("p4-title2").innerHTML = result;
+		       }
+		       
+		 
+		   },1000);
+			
+		</script>
+	</body>
+</html>

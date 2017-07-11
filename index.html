@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js" ></script>
+	<script src="js/snap.svg-min.js"></script> 
+    <style>
+    	html,body,.zs_container{height:100%;}
+        .zs_container{text-align: center;}
+        .canvas-wrap ,.zs_container canvas{position:absolute;left:50%;margin-left:-180px;z-index: 2;}
+        .zs_container canvas{position:absolute;border:1px solid black;z-index: 2;border-radius: 20%;border:1px solid rgba(255,222,223,.8);}
+        .tip{display:inline-block;position:absolute;padding:3px;border:1px solid #ccc;border-radius: 5px;font-size:32px;color:#FF0000;margin-top:30px;margin-left:10px;animation: shade 6s ease  0s infinite;}
+        .zs_style{font-size:25px;font-weight:bold; color:red;opacity:0;position:relative;margin-top:20px;z-index:2;}
+        svg{position:absolute;top:135px;left:-150px;margin-left:50%;display: none;overflow: hidden;}
+        #face{display: none;}
+        @keyframes fadeIn{from{opacity: 0;top:30px;}to{opacity: 1;top:-20px;}}
+        @keyframes shade{from{opacity: 0;}to{opacity: 1;}}
+    </style>
+</head>
+ <body>
+ 
+    <section class="zs_container ">
+        <div class="canvas-wrap" style='position:relative;width:450px;height:300px;top:500px;'>
+        	<canvas id="JS_canvas" width="200" height="200" style="top:50px;"></canvas>
+        	<span class="tip">点我 ！点我！</span>
+        </div>
+        <div id="JS_zs" class="zs_style"><!-- 时间 --></div>
+ 
+        <!-- 时钟 -->
+        <svg version="1.1" id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="94.257 101.184 300 300" enable-background="new 94.257 101.184 300 300" xml:space="preserve">
+            <circle id="face" fill="transparent" cx="243.869" cy="250.796" r="130.5"></circle>
+            <g id="minutes"><!-- 分针 -->
+                <g>
+                    <path fill="#3A3A3A" d="M244.831,261.39c-0.066,1.098-0.665,1.997-1.331,1.996c-0.666,0-1.265-0.898-1.332-1.996l-1.574-25.956
+                        c-0.066-1.098-0.101-2.896-0.077-3.996l1.729-78.619c0.024-1.1,0.589-2,1.254-2c0.666,0,1.231,0.9,1.255,2l1.729,78.361
+                        c0.024,1.1-0.01,2.898-0.076,3.996L244.831,261.39z"></path>
+                </g>
+            </g>
+            <g id="hours"><!-- 时针 -->
+                <g>
+                    <path fill="#3A3A3A" d="M245.317,261.606c-0.098,1.096-0.773,1.992-1.501,1.992s-1.404-0.896-1.503-1.992l-1.625-18.011
+                        c-0.099-1.095-0.15-2.891-0.114-3.991l1.854-56.678c0.036-1.1,0.661-1.999,1.389-1.999s1.353,0.899,1.389,1.999l1.853,56.488
+                        c0.036,1.1-0.015,2.896-0.113,3.991L245.317,261.606z"></path>
+                </g>
+            </g>
+            <g id="seconds"><!-- 秒针 -->
+                <g>
+                    <line fill="none" stroke="#BF4116" stroke-miterlimit="10" x1="243.5" y1="143" x2="243.5" y2="266"></line>
+                    <circle fill="none" stroke="#BF4116" stroke-miterlimit="10" cx="243.5" cy="271" r="5"></circle>
+                    <circle fill="#BF4116" cx="243.5" cy="251" r="3.251"></circle>
+                </g>
+            </g>
+        </svg>
+    </section>
+
+
+<script>
+ 
+ 
+ 
+ 
+// canvas画图
+var canvas = document.getElementById("JS_canvas"),
+    ctx = canvas.getContext("2d");  
+//心形
+function drowHeart(ctx,sx,sy){
+
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.bezierCurveTo(sx,sy,sx-5,sy-15,sx-25,sy-15);
+    ctx.bezierCurveTo(sx-55,sy-15,sx-53,sy+22.5,sx-53,sy+15);
+    ctx.bezierCurveTo(sx-55,sy+40,sx-35,sy+62,sx,sy+85);
+    ctx.bezierCurveTo(sx+35,sy+62,sx+55,sy+40,sx+55,sy+15);
+    ctx.bezierCurveTo(sx+55,sy+15,sx+55,sy-15,sx+25,sy-15);
+    ctx.bezierCurveTo(sx+10,sy-15,sx,sy,sx,sy);
+    
+ 
+     
+    // var gradient=ctx.createRadialGradient(0,0,0,0,0,150);
+    // gradient.addColorStop(0,"rgba(240,60,100,0.5)");
+    // gradient.addColorStop(1,"rgba(240,60,100,1)");
+    ctx.fillStyle="red";
+    ctx.fill();
+    ctx.closePath();
+}
+drowHeart(ctx,95,65);
+$(function(){
+	var top = $('.zs_container').height()-$('.canvas-wrap').offset().top+290;
+	console.log(top)
+	$('.canvas-wrap').animate({top:top+'px'},4000,arguments.callee)
+})
+
+//点击提示
+function drowTips(ctx,sx,sy){
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.lineTo(sx+40,sy);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+ 
+    ctx.beginPath();
+    ctx.moveTo(sx+40,sy);
+    ctx.lineTo(sx+70,sy-30);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+ 
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.font = "bold 18px Courier New";
+    ctx.fillText("Click",sx+58,sy-35);
+    ctx.closePath();
+}
+drowTips(ctx,335,220);
+ 
+ 
+var elClick = canvas;
+elClick.addEventListener("click",function(){
+	window.location.href='page1.html'
+  // $('.section-1').fadeOut();
+   //$('.section-2').fadeIn();
+})
+
+		    
+		    
+
+
+/*section-3*/
+ //时钟
+function canvasClock(){
+	//清除画布内容
+    ctx.clearRect(0,0,600,430);
+ 
+    //背景图
+    canvas.style.background="url(http://g.picphotos.baidu.com/album/s%3D1000%3Bq%3D90/sign=13c45b093e01213fcb334adc64d70da0/eac4b74543a98226512844f78d82b9014b90eb71.jpg)";
+    canvas.style.backgroundSize="cover";
+ 
+    //时钟
+    var clock = document.getElementById("clock");
+        clock.style.display = "block";
+        clock.style.zIndex="3";
+ 
+    //时间
+    setInterval(function(){
+        var th_moment = new Date(2016,1,13,23,0);//获取当初时间
+        var now = new Date();//获取当前时间
+        var time = (now-th_moment)/1000;//当前时间-当初时间
+        var day = Math.floor(time/(24*60*60));//天数
+        var hour = Math.floor(time%(24*60*60)/(60*60));//小时
+        var min = Math.floor(time%(24*60*60)%(60*60)/60);//分钟
+        var second = Math.floor(time%(24*60*60)%(60*60)%60);//秒钟
+        hour = hour < 10 ? "0" + hour.toString():hour;//数字小于10时在前方加“0”
+        min = min < 10 ? "0" + min.toString():min;
+        second = second < 10 ? "0" + second.toString():second;
+        var result = "Z 与 S 已携手"+day+"天"+hour+"小时"+min+"分"+second+"秒";//时间显示
+        var str = document.getElementById("JS_zs");
+            str.innerHTML = result;
+            str.style.webkitAnimation = "fadeIn 2s ease  0s 1 forwards";//添加动画
+ 
+    },1000);
+}
+ 
+//时分秒显示
+var s = Snap(document.getElementById("clock"));
+ 
+var seconds = s.select("#seconds"),
+    minutes = s.select("#minutes"),
+    hours   = s.select("#hours"),
+    rim     = s.select("#rim"), 
+    face    = {
+      elem: s.select("#face"),
+      cx: s.select("#face").getBBox().cx,
+      cy: s.select("#face").getBBox().cy,
+    },
+    angle   = 0,
+    easing = function(a) {
+      return a==!!a?a:Math.pow(4,-10*a)*Math.sin((a-.075)*2*Math.PI/.3)+1;
+    };
+ 
+function update() {
+  var time = new Date();
+  setHours(time);
+  setMinutes(time);
+  setSeconds(time);
+}
+ 
+function setHours(t) {
+  var hour = t.getHours();
+  hour %= 12;
+  hour += Math.floor(t.getMinutes()/10)/6;
+  var angle = hour*360/12;
+  hours.animate(
+    {transform: "rotate("+angle+" 244 251)"},
+    100,
+    mina.linear
+  );
+}
+function setMinutes(t) {
+  var minute = t.getMinutes();
+  minute %= 60;
+  minute += Math.floor(t.getSeconds()/10)/6;
+  var angle = minute*360/60;
+  minutes.animate(
+    {transform: "rotate("+angle+" "+face.cx+" "+face.cy+")"},
+    100,
+    mina.linear
+  );
+}
+function setSeconds(t) {
+  t = t.getSeconds();
+  t %= 60;
+  var angle = t*360/60;
+  if (angle === 0) angle = 360;
+  seconds.animate(
+    {transform: "rotate("+angle+" "+face.cx+" "+face.cy+")"},
+    600,
+    easing,
+    function(){
+      if (angle === 360){
+        seconds.attr({
+          transform: "rotate("+0+" "+face.cx+" "+face.cy+")",
+         })
+      }
+    }
+  );
+}
+setInterval(update, 1000);
+</script> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "rtn": 0,
+    "msg": "success",
+    "data": [
+    	{
+    		"userID":"1043",
+    		"name":"赵灵儿",
+    		"num":9180,
+    		"imgUrl":"http://img1.dzwww.com:8080/tupian_pl/20151110/14/6992540350617498034.jpg"
+    	},
+    	{
+    		"userID":"1044",
+    		"name":"李逍遥",
+    		"num":8998,
+    		"imgUrl":"http://www.people.com.cn/mediafile/pic/20170306/56/11010689165089947476.jpg"
+    	},
+    	{
+    		"userID":"1045",
+    		"name":"何诗韵",
+    		"num":6653,
+    		"imgUrl":"http://a.impingo.me/static/activity/singer/resource/1616312.jpg"
+    	},
+    	{
+    		"userID":"1046",
+    		"name":"高圆圆",
+    		"num":8998,
+    		"imgUrl":"http://www.people.com.cn/mediafile/pic/20170306/56/11010689165089947476.jpg"
+    	},
+    	{
+    		"userID":"1047",
+    		"name":"贾静雯",
+    		"num":8953,
+    		"imgUrl":"http://a.impingo.me/static/activity/singer/resource/1616312.jpg"
+    	}
+    ]
+}
