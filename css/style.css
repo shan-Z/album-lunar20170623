@@ -454,7 +454,7 @@ body {
 #page7 li[num='16'] .element-box img,
 #page7 li[num='17'] .element-box img,
 #page7 li[num='20'] .element-box img,
-#page7 li[num='21'] .element-box img{width: 0.9rem; height: 0.9rem; position: relative;top:-0.15rem;}
+#page7 li[num='21'] .element-box img{width: 0.9rem; height: 0.9rem; position: relative;}
 #page7 li[num='18'] .element-box img,
 #page7 li[num='19'] .element-box img{width: 1.7rem; height: 1.7rem; position: relative;}
 
