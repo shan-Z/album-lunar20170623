@@ -440,7 +440,7 @@ body {
 #page7 li[num='2'] .element-box img,
 #page7 li[num='3'] .element-box img,
 #page7 li[num='4'] .element-box img{width: 2rem; height: 2rem; }
-#page7 li[num='5'] .element-box img{width: 1rem; height: 1rem; position: relative;top:-0.1rem;}
+#page7 li[num='5'] .element-box img{width: 1rem; height: 1rem; position: relative;}
 #page7 li[num='6'] .element-box img,
 #page7 li[num='7'] .element-box img,
 #page7 li[num='8'] .element-box img,
