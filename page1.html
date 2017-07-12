@@ -20,7 +20,7 @@
 		<!--音乐播放-->
 		<div id="audio_btn" class="video_exist play_yinfu" style="display: block;">  
 			<div id="yinfu" class="rotate"></div>   
-			<audio id="myMusic" src="img/basic/张靓颖 - Dream It Possible.mp3" loop="loop" style="display:none;" preload="auto"></audio>
+			<audio id="myMusic" src="img/basic/张靓颖 - Dream It Possible.mp3" loop="loop" style="" autoplay="autoplay"></audio>
 		</div>
 		<!--背景-->
 		
@@ -40,25 +40,62 @@
 			  					+ '</div>'
 			  					+'</div>'
 			  var page1 =  '<img class="page1Bg" src="img/source/1.png" /><div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>';
-			  var page2 = '<div class="page2Bg">'
+			  var page2 = '<img src="img/basic/page2Bg.png" style="width:100%;"/>'
+			  			+ '<div id="page2Bg" class="page2Bg">'
 			  			+ '<div class="bottom"></div>'
 			  			+ '<div class="p2-title1" >'
         				+ '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png"></div>'
 						+ templatePhoto1
 						+ '<div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>'
 						+ '</div>'
-			  var page3 = '<div id="page3" class="page3">'
+			  var page3 = '<img class="page1Bg page3blur" src="img/source/page_3.jpg" />'
+			  			+ '<div id="page3" class="page3">'
 			  			+ '<div class="tepm-img"><img src="img/source/123.jpg"/></div>'
-			  			+ '<div class="tepm-img"><img src="img/source/1234.jpg"/></div>'
-			  			+ '<div class="tepm-img"><img src="img/source/12345.jpg"/></div>'
+			  			+ '<div style="position:relative;z-index: 10;"><div class="p3-title"><span style="line-height: 16px; font-size: 14px;">只要你在我身边</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">其他东西不再重要</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
 			  			+ '</div>'
-			  var page4 = '<img class="page1Bg" src="img/source/1.png" /><div id="page4">'
+			  var page4 = '<img class="page1Bg" src="img/source/page_4.jpg" /><div id="page4">'
 			            + '<div class="titles"><div class="p4-title1" >'
 			            + '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png">'
 						+ '</div><div id="p4-title2" class="p4-title2"></div></div>'
-						+ '<div class="bottom">fff</div>'
+						+ '<div class="bottom"><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">只要你一向在我身边，其他东西不再重要。</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我知道我不完美，但我的爱最纯粹，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
 						+ '</div>'
-			  var list = [
+			  var page5 = '<img class="page1Bg" src="img/source/page_6.jpg" />'
+			  			+ '<div id="page5" class="page5">'
+			  			+ '<div class="imgs-box"><div class="tepm2-img"><img src="img/source/page2/1043.jpg"/></div>'
+			  			+ '<div class="tepm2-img"><img src="img/source/page2/1044.jpg"/></div>'
+			  			+ '<div class="tepm2-img"><img src="img/source/page2/1045.jpg"/></div>'
+			  			+ '<div class="tepm2-img"><img src="img/source/page2/1046.jpg"/></div></div><div class="box-border"><div></div></div>'
+			  			+ '</div>'
+			  var page6 = '<img class="page1Bg" src="img/source/page_6.gif" />'
+			  			+ '<div id="page6" class="page5">'
+			  			+ '<div class="imgs-box"></div>'
+			  			+ '</div>'
+			  var demo = '<div class="element-box" ><div class="element-box-contents" style="width: 100%; height: 100%"><img id="1888904104" ctype="4" class="element comp_image editable-image" draggable="false" src="img/source/page2/1044.jpg" ></div></div>'
+			  var page7 = '<img class="page1Bg" src="img/source/page_5.jpg" />'
+			  			+ '<div id="page7" class="page7">'
+			  			+ '<li  num="1" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="2" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="3" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="4" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="5" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="6" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="7" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="8" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="9" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="10" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="11" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="12" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="13" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="14" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="15" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="16" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="17" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="18" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="19" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="20" ctype="4" >'+demo+'</li>'
+			  			+ '<li  num="21" ctype="4" >'+demo+'</li>'
+						+ '</div>'
+			 var list = [
 		        /*// picture
 		        {
 		            content: 'img/source/loading_200x_200.gif'
@@ -71,8 +108,19 @@
 		        {
 		            content: page2
 		        },
+		        
 		        {
 		            content: page3
+		        },
+		        
+		        {
+		        	content: page5
+		        },
+		        {
+		        	content: page7
+		        },
+		        {
+		        	content: page6
 		        },
 		        {
 		            content: page4
