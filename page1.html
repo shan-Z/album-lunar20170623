@@ -6,9 +6,7 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<!--<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-		<script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" ></script>
-		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>-->
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js" ></script>
 		<script src="js/iSlider.js"></script>
 		<script src="js/resize.js"></script>
 		<style>
@@ -16,7 +14,7 @@
 		</style>
 	</head>
 	<body>
-		<div id="iSlider-wrapper"></div><i class="next fa fa-chevron-up" id='nextPage'></i><!--<div class="music"><audio src="img/张靓颖 - Dream It Possible.mp3" autoplay="autoplay" loop="loop" ></audio></div>-->
+		<div id="iSlider-wrapper"></div><i class="next fa fa-chevron-up" id='nextPage'></i><!--<div class="music">
 		<!--音乐播放-->
 		<div id="audio_btn" class="video_exist play_yinfu" style="display: block;">  
 			<div id="yinfu" class="rotate"></div>   
@@ -25,148 +23,199 @@
 		<!--背景-->
 		
 		<script>
-			 var templatePhoto1 = '<div class="imgs-wrap " >'
-			 					+ '<div class="tepm-img">'
-			  					+ '<img src="img/source/page2/1043.jpg"/>'
-			  					+ '</div>'
-			  					+ '<div class="tepm-img">'
-			  					+ '<img src="img/source/page2/1043.jpg"/>'
-			  					+ '</div>'
-			  					+ '<div class="tepm-img">'
-			  					+ '<img src="img/source/page2/1043.jpg"/>'
-			  					+ '</div>'
-			  					+ '<div class="tepm-img">'
-			  					+ '<img src="img/source/page2/1043.jpg"/>'
-			  					+ '</div>'
-			  					+'</div>'
-			  var page1 =  '<img class="page1Bg" src="img/source/1.png" /><div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>';
-			  var page2 = '<img src="img/basic/page2Bg.png" style="width:100%;"/>'
-			  			+ '<div id="page2Bg" class="page2Bg">'
-			  			+ '<div class="bottom"></div>'
-			  			+ '<div class="p2-title1" >'
-        				+ '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png"></div>'
-						+ templatePhoto1
-						+ '<div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>'
-						+ '</div>'
-			  var page3 = '<img class="page1Bg page3blur" src="img/source/page_3.jpg" />'
-			  			+ '<div id="page3" class="page3">'
-			  			+ '<div class="tepm-img"><img src="img/source/123.jpg"/></div>'
-			  			+ '<div style="position:relative;z-index: 10;"><div class="p3-title"><span style="line-height: 16px; font-size: 14px;">只要你在我身边</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">其他东西不再重要</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
-			  			+ '</div>'
-			  var page4 = '<img class="page1Bg" src="img/source/page_4.jpg" /><div id="page4">'
-			            + '<div class="titles"><div class="p4-title1" >'
-			            + '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png">'
-						+ '</div><div id="p4-title2" class="p4-title2"></div></div>'
-						+ '<div class="bottom"><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">只要你一向在我身边，其他东西不再重要。</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我知道我不完美，但我的爱最纯粹，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
-						+ '</div>'
-			  var page5 = '<img class="page1Bg" src="img/source/page_6.jpg" />'
-			  			+ '<div id="page5" class="page5">'
-			  			+ '<div class="imgs-box"><div class="tepm2-img"><img src="img/source/page2/1043.jpg"/></div>'
-			  			+ '<div class="tepm2-img"><img src="img/source/page2/1044.jpg"/></div>'
-			  			+ '<div class="tepm2-img"><img src="img/source/page2/1045.jpg"/></div>'
-			  			+ '<div class="tepm2-img"><img src="img/source/page2/1046.jpg"/></div></div><div class="box-border"><div></div></div>'
-			  			+ '</div>'
-			  var page6 = '<img class="page1Bg" src="img/source/page_6.gif" />'
-			  			+ '<div id="page6" class="page5">'
-			  			+ '<div class="imgs-box"></div>'
-			  			+ '</div>'
-			  var demo = '<div class="element-box" ><div class="element-box-contents" style="width: 100%; height: 100%"><img id="1888904104" ctype="4" class="element comp_image editable-image" draggable="false" src="img/source/page2/1044.jpg" ></div></div>'
-			  var page7 = '<img class="page1Bg" src="img/source/page_5.jpg" />'
-			  			+ '<div id="page7" class="page7">'
-			  			+ '<li  num="1" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="2" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="3" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="4" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="5" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="6" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="7" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="8" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="9" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="10" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="11" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="12" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="13" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="14" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="15" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="16" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="17" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="18" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="19" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="20" ctype="4" >'+demo+'</li>'
-			  			+ '<li  num="21" ctype="4" >'+demo+'</li>'
-						+ '</div>'
-			 var list = [
-		        /*// picture
-		        {
-		            content: 'img/source/loading_200x_200.gif'
-		        },*/
-		        // HTML String
-		        {
-		            content: page1
-		        },
-		        // element
-		        {
-		            content: page2
-		        },
-		        
-		        {
-		            content: page3
-		        },
-		        
-		        {
-		        	content: page5
-		        },
-		        {
-		        	content: page7
-		        },
-		        {
-		        	content: page6
-		        },
-		        {
-		            content: page4
-		        },
-		        // fragment
-		       /* {
-		            content: (function () {
-		                var frag = document.createDocumentFragment();
-		                var img = new Image()
-		                var dom = document.createElement('div');
-		                dom.innerHTML = 'Fragment';
-		                dom.style.cssText = 'font-size:3em;color:rgb(230, 63, 230);';
-		                frag.appendChild(dom);
-		                return frag;
-		            })()
-		        },*/
-		        /*// dom
-		        {
-		            content: document.querySelector('#hidden-space > p')
-		        },*/
-		        // iframe
-		        /*{
-		            content: '' +
-		            '<div style="padding-top:.2em;font-size:3em;color:rgb(230, 63, 230);position:absolute;top:0;left:0;height:100%;width:100%;z-index:1">' +
-		            '<span style="padding:.2em;background-color:black;">Iframe</span>' +
-		            '</div>'+'<iframe></iframe>'
-		            
-		        }*/
-		    ];
-		
-		    var S = new iSlider({
-		        dom: document.getElementById('iSlider-wrapper'),
-		        data: list,
-		        isAutoplay: 0,
-		        isLooping: 1,
-		        isOverspread: 1,
-		        animateTime: 800,
-		        isVertical: true,
-		        oninitialized:function(){
-		        	var _this = this;
-		        	var next = document.getElementById('nextPage');
-					    next.addEventListener('touchend',function(){
-					    	_this.slideNext()
-					    })//下一页
-		        }
-		    });
+			 
+	$.ajax({
+			url:'js/url/page.json',
+			type:'get',
+			success:function(data){
+				
+				
+				  var page1 =  '<img class="page1Bg" src="img/source/1.png" /><div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>';
+				 var page2,data2 = '',res2 = data.page2data;
+				 for(var i=0;i<res2.length;i++){
+				 	data2 += '<div class="tepm-img"><img src="'+res2[i].imgUrl+'"/></div>'
+				 }
+				 page2 = '<img src="img/source/33/2016-09-17 (2).jpeg"  class="page1Bg " style="width:100%;height:100%;filter: blur(4px);"/>'
+				  			+ '<div id="page2Bg" class="page2Bg  page">'
+				  			/*+ '<div class="bottom"></div>'*/
+				  			+ '<div class="p2-title1" >'
+	        				+ '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png"></div>'
+							+ '<div class="imgs-wrap " >'
+							+ data2
+							+ '</div>'
+							//+ '<div class="img-preview-over" style=""><a class="ui-link"><img class="ui-image"  src="//z1.xiu.top/uploadFiles/gif/20170525213506939.gif"></a></div>'
+							+ '</div>'
+				  var page3 = '<img class="page1Bg page3blur" src="img/source/page_3.jpg" />'
+				  			+ '<div id="page3" class="page3 page">'
+				  			+ '<div class="tepm-img"><img src="img/source/33/2016-05-01.jpeg"/></div>'
+				  			+ '<div style="position:relative;z-index: 10;"><div class="p3-title"><span style="line-height: 16px; font-size: 14px;">只要你在我身边</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">其他东西不再重要</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div  class="p3-title"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
+				  			+ '</div>'
+				  var page4 = '<img class="page1Bg" src="img/source/page_4.png" /><div id="page4" class=" page">'
+				            + '<div class="titles"><div class="p4-title1" >'
+				            + '<img class="ui-image" style="height: 149px; width: 65px; max-width: inherit; margin-top: 0px; margin-left: 0px; display: block;" src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png" dynamic-src="//z2.xiu.top/upload/e93c588dd48dccce8ea914b40d505d16/img/e81dc70cb290dfaf.png">'
+							+ '</div><div id="p4-title2" class="p4-title2"></div></div>'
+							+ '<div class="bottom"><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">只要你一向在我身边，其他东西不再重要。</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我知道我不完美，但我的爱最纯粹，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">我不怕苦不怕累，生命爱你是我最灿烂的陶醉，</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">发奋营造生活的明媚，爱你我真的无悔</span></div><div style="text-align: left;"><span style="line-height: 16px; font-size: 14px;">世上最浪漫和最自私的话就是：</span><span style="font-size: 14px; line-height: 16px; color: inherit; background-color: initial;">你是我一个人的。</span></div></div>'
+							+ '</div>'
+				  var page5 ,data5="",res5 = data.page5data;
+				  for(var i=0;i< res5.length;i++){
+				  	data5 += '<div class="tepm2-img"><img src="'+res5[i].imgUrl+'"/></div>'
+				  }
+				   page5 = '<img class="page1Bg" src="img/source/page_6.jpg" /><div id="page5" class="page5 page">'
+				  		 + '<div class="imgs-box">'+data5+'</div><div class="box-border"><div></div></div></div>'
+				  			
+				  var page6 = '<img class="page1Bg" src="img/source/page_6.gif" />'
+				  			+ '<div id="page6" class="page6 page">'
+				  			+ '<div class="imgs-box">'
+				  			+ '<div class="p-title"><span >现在我们</span></div>'
+				  			+ '<div class="p-title"><span >一起回顾</span></div>'
+				  			+ '<div class="p-title"><span >昔日一起的时光</span></div>'
+				  			+ '</div>'
+				  			+ '</div>'
+				  var page7 = '',demo='',res7 = data.page7data;
+				  for(var i=0;i< res7.length;i++){
+						demo += '<li num="'+i+'">'+ '<div class="element-box" ><div class="element-box-contents" style="width: 100%; height: 100%"><img src="'+res7[i].imgUrl+'" ></div></div>'+ '</li>'
+				  }
+				  page7 +='<img class="page1Bg" src="img/source/page_5.jpg" />'+ '<div id="page7" class="page7 page">'+ demo+ '</div>'
+				
+				
+				var page8;
+				page8 = '<img class="page1Bg" src="img/source/page8/1.jpg" />'
+					  + '<div id="page8"  class="page" style="font-size:20px;">我们曾'
+					  + '<div class="p-title"><span >一起下厨</span></div>'
+					  + '<div class="p-title"><span >做彼此喜欢的吃的食物</span></div>'
+					  + '</div>'
+				var page9;
+				page9 = '<img class="page1Bg" src="img/source/page8/2.jpg" />'
+					  + '<div id="page9" class="page">'
+					  + '<div class="p-title"><span >手挽着手</span></div>'
+					  + '<div class="p-title"><span >一起在雨中散步</span></div>'
+					  + '</div>'
+				var page10;
+				page10 = '<img class="page1Bg" src="img/source/page8/3.jpg" />'
+					   + '<div id="page10" class="page">'
+					   + '<div class="p-title"><span >一起看风景</span></div>'
+					   + '<div class="p-title"><span >哪怕只在自家窗前</span></div>'
+					   + '</div>'
+				var page11;
+				page11 = '<img class="page1Bg" src="img/source/page8/4.jpg" />'
+					   + '<div id="page11" class="page">'
+					   + '<div class="p-title"><span >一起刷牙洗脸</span></div>'
+					   + '<div class="p-title"><span >对着同一面镜子</span></div>'
+					   + '</div>'
+			    var page12;
+				page12 = '<img class="page1Bg" src="img/source/page8/5.jpg" />'
+					   + '<div id="page12" class="page">'
+					   + '<div class="p-title"><span >相互依偎</span></div>'
+					   + '<div class="p-title"><span >一起看同一部电视剧</span></div>'
+					   + '</div>'
+			    var page13;
+				page13 = '<img class="page1Bg" src="img/source/page8/6.jpg" />'
+					   + '<div id="page13" class="page">'
+					   + '<div class="p-title"><span >一起做家务</span></div>'
+					   + '<div class="p-title"><span >各为所能，尽力承担</span></div>'
+					   + '</div>'
+			    var page14;
+				page14 = '<img class="page1Bg" src="img/source/page8/7.jpg" />'
+					   + '<div id="page14" class="page">'
+					   + '<div class="p-title"><span >一起吃冰淇淋</span></div>'
+					   + '<div class="p-title"><span >在草地上，在阳光下</span></div>'
+					   + '</div>'
+			    var page15;
+				page15 = '<img class="page1Bg" src="img/source/page8/8.jpg" />'
+					   + '<div id="page15" class="page">'
+					   + '<div class="p-title"><span >同床共枕</span></div>'
+					   + '<div class="p-title"><span >看不同的书，做一样的梦</span></div>'
+					   + '</div>'
+				var page16;
+				page16 = '<img class="page1Bg" src="img/source/page8/9.jpg" />'
+					   + '<div id="page9" class="page">'
+					   + '<div class="p-title"><span >彼此成为彼此</span></div>'
+					   + '<div class="p-title"><span >最信任的依靠</span></div>'
+					   + '</div>'
+				/*滑动页面*/
+  				  var list = [
+  				  		{
+				            content: page4
+				        },
+  				  		{
+				            content: page8
+				        },
+				        {
+				            content: page9
+				        }
+				        ,
+				        {
+				            content: page10
+				        },
+				        {
+				            content: page11
+				        },
+				        {
+				            content: page12
+				        }
+				        ,
+				        {
+				            content: page13
+				        },
+				        {
+				            content: page14
+				        },
+				        {
+				            content: page15
+				        }
+				        ,
+				        {
+				            content: page16
+				        },
+				        {
+				        	content: page6
+				        },
+				        /*{
+				            content: page1
+				        },*/
+				        {
+				            content: page2
+				        },
+				        {
+				            content: page3
+				        },
+				        {
+				        	content: page5
+				        },
+				        {
+				        	content: page7
+				        },
+				        
+				        
+				        
+				];
+			   /*iSlider插件*/	
+				var S = new iSlider({
+					dom: document.getElementById('iSlider-wrapper'),
+			        data: list,
+			        isAutoplay: 0,
+			        isLooping: 1,
+			        isOverspread: 1,
+			        animateTime: 800,
+			        isVertical: true,
+			        oninitialized:function(){
+			        	var _this = this;
+			        	var next = document.getElementById('nextPage');
+						    next.addEventListener('touchend',function(){
+						    	_this.slideNext()
+						    })//下一页
+			        }
+				});
+			},
+			error:function(e){
+				console.log(e)
+			}
+	})
+			
+			  			
+			  			
+			  
+			 
 		   
 		   
 		  /* page4  时分秒显示*/
@@ -182,7 +231,7 @@
 		        hour = hour < 10 ? "0" + hour.toString():hour;//数字小于10时在前方加“0”
 		        min = min < 10 ? "0" + min.toString():min;
 		        second = second < 10 ? "0" + second.toString():second;
-		        var result = "<p class='days-count'>已携手 <span>"+day+"</span>天<span>"+hour+"</span>小时<span>"+min+"</span>分<span>"+second+"</span>秒";//时间显示
+		        var result = "<p class='days-count'>在一起 <span>"+day+"</span>天<span>"+hour+"</span>小时<span>"+min+"</span>分<span>"+second+"</span>秒";//时间显示
 		        
 		       
 		       if(document.getElementById("p4-title2"))
@@ -193,6 +242,7 @@
 		 
 		   },1000);
 			
+		
 		</script>
 	</body>
 </html>
