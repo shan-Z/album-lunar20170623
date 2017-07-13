@@ -168,12 +168,7 @@ body {
 	    transform: rotate(360deg);
 	}
 }
-#page7,
-#page6,
-#page5,
-#page4 ,
-#page3 ,
-#page2Bg{
+.page{
 	width:100%;
 	height:100%;
 	margin-left:-8rem;
@@ -232,7 +227,7 @@ body {
 .tepm-img{padding:8px;background: #fff;display:inline-block;margin:5px;    margin-bottom: 0;padding-bottom: 0;position: relative;z-index:10;box-shadow: 0 0 7px rgba(0,0,0,0.3);}
 .tepm2-img{display: inline-block;position: relative;}
 .tepm2-img >img{width:3rem;height:2rem;}
-.page2Bg .tepm-img >img{width:2.8rem;}
+.page2Bg .tepm-img >img{width:2.8rem; height: 2.1rem;}
 
 .page2Bg .tepm-img:nth-child(1){left:-20rem;}
 .islider-active .page2Bg .tepm-img:nth-child(1){animation: fly1 1s ease 0.3s 1 forwards ;}
@@ -304,7 +299,7 @@ body {
 #page4 .days-count{
 	width:20px;
 	font-size: 13px;
-	color:#fff;
+	color:#999;
 	margin:20px;
 }
 #page4 .days-count >span{
@@ -403,8 +398,10 @@ body {
 /*page6*/
 #page6 .imgs-box{
 	position: relative;
-	top: -10rem;
 	background:rgba(255,255,255,0.4);
+	height:3rem;
+	margin-top: 50%;
+	top:-10rem;
 }
 .islider-active  #page6 .imgs-box{animation: p5flyTop 2s ease  0s 1 forwards;}
 
@@ -487,3 +484,28 @@ body {
 .islider-active #page7 li[num='19']   .element-box{animation: 2s ease 0.9s normal both 1 running fadeIn;}
 .islider-active #page7 li[num='20']   .element-box{animation: 2s ease 0.4s normal both 1 running fadeIn;}
 .islider-active #page7 li[num='21']   .element-box{animation: 2s ease 2.1s normal both 1 running fadeIn;}
+
+/*page8*/
+.page8{
+	background: url(../img/source/page8/1.jpg)no-repeat;
+    width: 100%;
+    background-size: contain;
+    height: 100%;
+}
+.p8-title,
+.p-title{
+	text-align: center;
+    height: 30px;
+    position: relative;
+    opacity: 0; 
+    top:20px;
+}
+.p8-title{opacity: 1;}
+.p8-title >span,
+.p-title >span{
+	font-size:18px;
+	display: block;
+}
+.islider-active .page .p-title:nth-child(1){animation: fadeIn 2s ease  0.1s 1 forwards;}
+.islider-active .page .p-title:nth-child(2){animation: fadeIn 2s ease  0.5s 1 forwards;}
+.islider-active .page .p-title:nth-child(3){animation: fadeIn 2s ease  1s 1 forwards;}
